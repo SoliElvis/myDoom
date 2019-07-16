@@ -36,7 +36,7 @@
        ;;pretty-code       ; replace bits of code with pretty symbols
        ;;tabbar            ; FIXME an (incomplete) tab bar for Emacs
        treemacs          ; a project drawer, like neotree but cooler
-       ;;unicode           ; extended unicode support for various languages
+       unicode           ; extended unicode support for various languages
        vc-gutter         ; vcs diff in the fringe
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
        window-select     ; visually switch windows
@@ -110,7 +110,7 @@
        ;;ess               ; emacs speaks statistics
        fsharp           ; ML stands for Microsoft's Language
        ;;go                ; the hipster dialect
-       ;;(haskell +intero) ; a language that's lazier than I am
+       (haskell +intero) ; a language that's lazier than I am
        hy                ; readability of scheme w/ speed of python
        ;;idris             ;
        (java +meghanada) ; the poster child for carpal tunnel syndrome
@@ -139,6 +139,7 @@
        racket            ; a DSL for DSLs
        ;;rest              ; Emacs as a REST client
        ruby              ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
+
        rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        scala             ; java, but good
        sh                ; she sells {ba,z,fi}sh shells on the C xor
@@ -160,7 +161,7 @@
        ;;calendar
        ;;irc              ; how neckbeards socialize
        (rss +org)        ; emacs as an RSS reader
-       ;;twitter           ; twitter client https://twitter.com/vnought
+       twitter           ; twitter client https://twitter.com/vnought
        (write            ; emacs as a word processor (latex + org + markdown)
          +wordnut         ; wordnet (wn) search
          +langtool)       ; a proofreader (grammar/style check) for Emacs
@@ -178,3 +179,33 @@
        ;; provides a Spacemacs-inspired keybinding scheme and a smartparens
        ;; config. Use it as a reference for your own modules.
        (default +bindings +smartparens))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("d2e9c7e31e574bf38f4b0fb927aaff20c1e5f92f72001102758005e53d77b8c9" default)))
+ '(org-agenda-files (quote ("~/.personal/todo.org")))
+ '(org-todo-keyword-faces
+   (quote
+    (("DONE" :foreground "cyan" :weight bold)
+     ("SOMEDAY" :foreground "gray" :weight bold)
+     ("WAITING" :foreground "red" :weight bold)
+     ("STARTED" :foreground "cyan" :weight normal)
+     ("NEXT" :foreground "cyan" :weight bold)))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-document-title ((t (:inherit default :weight normal :foreground "#bbc2cf" :family "Sans Serif" :height 2.0 :underline nil))))
+ '(org-level-1 ((t (:inherit default :weight normal :foreground "#bbc2cf" :family "Sans Serif" :height 1.7))))
+ '(org-level-2 ((t (:inherit default :weight normal :foreground "#bbc2cf" :family "Sans Serif" :height 1.5))))
+ '(org-level-3 ((t (:inherit default :weight normal :foreground "#bbc2cf" :family "Sans Serif" :height 1.25))))
+ '(org-level-4 ((t (:inherit default :weight normal :foreground "#bbc2cf" :family "Sans Serif" :height 1.1))))
+ '(org-level-5 ((t (:inherit default :weight normal :foreground "#bbc2cf" :family "Sans Serif"))))
+ '(org-level-6 ((t (:inherit default :weight normal :foreground "#bbc2cf" :family "Sans Serif"))))
+ '(org-level-7 ((t (:inherit default :weight normal :foreground "#bbc2cf" :family "Sans Serif"))))
+ '(org-level-8 ((t (:inherit default :weight normal :foreground "#bbc2cf" :family "Sans Serif")))))
