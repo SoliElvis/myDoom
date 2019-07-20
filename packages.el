@@ -12,3 +12,6 @@
 (package! org-ref)
 (package! toc-org)
 (package! elpy)
+(package! company-box)
+(package! org-noter)
+(package! org-bullets)
