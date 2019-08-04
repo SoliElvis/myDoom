@@ -13,19 +13,19 @@
        ;;japanese
 
        :completion
-       company           ; the ultimate code completion backend
+       ;; company           ; the ultimate code completion backend
        helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
        ivy               ; a search engine for love and life
 
        :ui
-       ;;deft              ; notational velocity for Emacs
+       deft              ; notational velocity for Emacs
        doom              ; what makes DOOM look the way it does
        doom-dashboard    ; a nifty splash screen for Emacs
        doom-quit         ; DOOM quit-message prompts when you quit Emacs
        ;;fill-column       ; a `fill-column' indicator
        hl-todo           ; highlight TODO/FIXME/NOTE tags
-       ;;indent-guides     ; highlighted indent columns
+       indent-guides     ; highlighted indent columns
        modeline          ; snazzy, Atom-inspired modeline, plus API
        nav-flash         ; blink the current line after jumping
        ;;neotree           ; a project drawer, like NERDTree for vim
@@ -72,7 +72,7 @@
        ;;direnv
        docker
        ;;editorconfig      ; let someone else argue about tabs vs spaces
-       ;;ein               ; tame Jupyter notebooks with emacs
+       ein               ; tame Jupyter notebooks with emacs
        eval              ; run code, run (also, repls)
        flycheck          ; tasing you for every semicolon you forget
        flyspell          ; tasing you for misspelling mispelling
@@ -83,10 +83,10 @@
        ;;macos             ; MacOS-specific commands
        magit             ; a git porcelain for Emacs
        make              ; run make tasks from Emacs
-       ;;pass              ; password manager for nerds
+       pass              ; password manager for nerds
        pdf               ; pdf enhancements
        ;;prodigy           ; FIXME managing external services & code builders
-       ;;rgb               ; creating color strings
+       rgb               ; creating color strings
        ;;terraform         ; infrastructure as code
        tmux              ; an API for interacting with tmux
        upload            ; map local to remote projects via ssh/ftp
@@ -106,9 +106,9 @@
        elixir            ; erlang done right
        ;;elm               ; care for a cup of TEA?
        emacs-lisp        ; drown in parentheses
-       ;;ess               ; emacs speaks statistics
+       ess               ; emacs speaks statistics
        fsharp           ; ML stands for Microsoft's Language
-       ;;go                ; the hipster dialect
+       go                ; the hipster dialect
        (haskell +intero) ; a language that's lazier than I am
        hy                ; readability of scheme w/ speed of python
        ;;idris             ;
@@ -132,11 +132,11 @@
        perl              ; write code no one else can comprehend
        php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
-       ;;purescript        ; javascript, but functional
+       purescript        ; javascript, but functional
        python            ; beautiful is better than ugly
-       ;;qt                ; the 'cutest' gui framework ever
+       qt                ; the 'cutest' gui framework ever
        racket            ; a DSL for DSLs
-       ;;rest              ; Emacs as a REST client
+       rest              ; Emacs as a REST client
        ruby              ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
 
        rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
@@ -149,15 +149,13 @@
        ;;vala              ; GObjective-C
 
        :email
-       (mu4e +gmail)       ; WIP
-       ;;notmuch             ; WIP
-       ;;(wanderlust +gmail) ; WIP
+       mu4e
 
        ;; Applications are complex and opinionated modules that transform Emacs
        ;; toward a specific purpose. They may have additional dependencies and
        ;; should be loaded late.
        :app
-       ;;calendar
+       calendar
        ;;irc              ; how neckbeards socialize
        (rss +org)        ; emacs as an RSS reader
        twitter           ; twitter client https://twitter.com/vnought
@@ -167,7 +165,7 @@
 
        :collab
        ;;floobits          ; peer programming for a price
-       ;;impatient-mode    ; show off code over HTTP
+       impatient-mode    ; show off code over HTTP
 
        :config
        ;; For literate config users. This will tangle+compile a config.org
@@ -178,6 +176,7 @@
        ;; provides a Spacemacs-inspired keybinding scheme and a smartparens
        ;; config. Use it as a reference for your own modules.
        (default +bindings +smartparens))
+(advice-add #'doom--refresh-pkg-contents :override #'package-refresh-contents)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -185,27 +184,10 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("6b6725004cbf585dbc1aa375a969811f1e4daeee6708df5ffa6a716a4e69a9ff" "d2e9c7e31e574bf38f4b0fb927aaff20c1e5f92f72001102758005e53d77b8c9" default)))
- '(org-agenda-files (quote ("~/.personal/todo.org")))
- '(org-todo-keyword-faces
-   (quote
-    (("DONE" :foreground "cyan" :weight bold)
-     ("SOMEDAY" :foreground "gray" :weight bold)
-     ("WAITING" :foreground "red" :weight bold)
-     ("STARTED" :foreground "cyan" :weight normal)
-     ("NEXT" :foreground "cyan" :weight bold))))
- '(safe-local-variable-values (quote ((org-image-actual-width)))))
+    ("4e10cdf7d030fb41061cf57c74f6ddfc19db8d4af6c8e0723dc77f9922543a3d" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-document-title ((t (:inherit default :weight normal :foreground "#bbc2cf" :family "Sans Serif" :height 2.0 :underline nil))))
- '(org-level-1 ((t (:inherit default :weight normal :foreground "#bbc2cf" :family "Sans Serif" :height 1.7))))
- '(org-level-2 ((t (:inherit default :weight normal :foreground "#bbc2cf" :family "Sans Serif" :height 1.5))))
- '(org-level-3 ((t (:inherit default :weight normal :foreground "#bbc2cf" :family "Sans Serif" :height 1.25))))
- '(org-level-4 ((t (:inherit default :weight normal :foreground "#bbc2cf" :family "Sans Serif" :height 1.1))))
- '(org-level-5 ((t (:inherit default :weight normal :foreground "#bbc2cf" :family "Sans Serif"))))
- '(org-level-6 ((t (:inherit default :weight normal :foreground "#bbc2cf" :family "Sans Serif"))))
- '(org-level-7 ((t (:inherit default :weight normal :foreground "#bbc2cf" :family "Sans Serif"))))
- '(org-level-8 ((t (:inherit default :weight normal :foreground "#bbc2cf" :family "Sans Serif")))))
+ )
