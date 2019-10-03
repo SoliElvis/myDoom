@@ -18,29 +18,6 @@
        ;;ido               ; the other *other* search engine...
        ivy               ; a search engine for love and life
 
-       :ui
-       deft              ; notational velocity for Emacs
-       doom              ; what makes DOOM look the way it does
-       doom-dashboard    ; a nifty splash screen for Emacs
-       doom-quit         ; DOOM quit-message prompts when you quit Emacs
-       ;;fill-column       ; a `fill-column' indicator
-       hl-todo           ; highlight TODO/FIXME/NOTE tags
-       indent-guides     ; highlighted indent columns
-       modeline          ; snazzy, Atom-inspired modeline, plus API
-       nav-flash         ; blink the current line after jumping
-       ;;neotree           ; a project drawer, like NERDTree for vim
-       ophints           ; highlight the region an operation acts on
-       (popup            ; tame sudden yet inevitable temporary windows
-         +all             ; catch all popups that start with an asterix
-         +defaults)       ; default popup rules
-       ;;pretty-code       ; replace bits of code with pretty symbols
-       ;;tabbar            ; FIXME an (incomplete) tab bar for Emacs
-       treemacs          ; a project drawer, like neotree but cooler
-       unicode           ; extended unicode support for various languages
-       vc-gutter         ; vcs diff in the fringe
-       vi-tilde-fringe   ; fringe tildes to mark beyond EOB
-       window-select     ; visually switch windows
-       workspaces        ; tab emulation, persistence & separate workspaces
 
        :editor
        (evil +everywhere); come to the dark side, we have cookies
@@ -96,22 +73,21 @@
        ;;agda              ; types of types of types of types...
        ;;assembly          ; assembly for fun or debugging
        ;;cc                ; C/C++/Obj-C madness
-       ;;clojure           ; java with a lisp
+       clojure           ; java with a lisp
        common-lisp       ; if you've seen one lisp, you've seen them all
-       ;;coq               ; proofs-as-programs
+       coq               ; proofs-as-programs
        crystal           ; ruby at the speed of c
        csharp            ; unity, .NET, and mono shenanigans
        data              ; config/data formats
        erlang            ; an elegant language for a more civilized age
        elixir            ; erlang done right
-       ;;elm               ; care for a cup of TEA?
+       elm               ; care for a cup of TEA?
        emacs-lisp        ; drown in parentheses
        ess               ; emacs speaks statistics
        fsharp           ; ML stands for Microsoft's Language
        go                ; the hipster dialect
-       (haskell +intero) ; a language that's lazier than I am
        hy                ; readability of scheme w/ speed of python
-       ;;idris             ;
+       idris             ;
        (java +meghanada) ; the poster child for carpal tunnel syndrome
        javascript        ; all(hope(abandon(ye(who(enter(here))))))
        julia             ; a better, faster MATLAB
@@ -131,7 +107,7 @@
          +present)
        perl              ; write code no one else can comprehend
        php               ; perl's insecure younger brother
-       ;;plantuml          ; diagrams for confusing people more
+       plantuml          ; diagrams for confusing people more
        purescript        ; javascript, but functional
        python            ; beautiful is better than ugly
        qt                ; the 'cutest' gui framework ever
@@ -148,8 +124,6 @@
        ;;web               ; the tubes
        ;;vala              ; GObjective-C
 
-       :email
-       mu4e
 
        ;; Applications are complex and opinionated modules that transform Emacs
        ;; toward a specific purpose. They may have additional dependencies and
@@ -182,12 +156,30 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(company-begin-commands (quote (self-insert-command)))
+ '(company-idle-delay 0.2)
+ '(company-minimum-prefix-length 2)
+ '(company-show-numbers t)
+ '(company-tooltip-align-annotations t)
  '(custom-safe-themes
    (quote
-    ("4e10cdf7d030fb41061cf57c74f6ddfc19db8d4af6c8e0723dc77f9922543a3d" default))))
+    ("f8fb7488faa7a70aee20b63560c36b3773bd0e4c56230a97297ad54ff8263930" "f8067b7d0dbffb29a79e0843797efabdf5e1cf326639874d8b407e9b034136a4" "97965ccdac20cae22c5658c282544892959dc541af3e9ef8857dbf22eb70e82b" "9129c2759b8ba8e8396fe92535449de3e7ba61fd34569a488dd64e80f5041c9f" "071f5702a5445970105be9456a48423a87b8b9cfa4b1f76d15699b29123fb7d8" "fefab1b6d3366a959c78b4ed154018d48f4ec439ce652f4748ef22945ca7c2d5" "0fe9f7a04e7a00ad99ecacc875c8ccb4153204e29d3e57e9669691e6ed8340ce" "001c2ff8afde9c3e707a2eb3e810a0a36fb2b466e96377ac95968e7f8930a7c5" "a2286409934b11f2f3b7d89b1eaebb965fd63bc1e0be1c159c02e396afb893c8" "f589e634c9ff738341823a5a58fc200341b440611aaa8e0189df85b44533692b" "70ed3a0f434c63206a23012d9cdfbe6c6d4bb4685ad64154f37f3c15c10f3b90" "018c8326bced5102b4c1b84e1739ba3c7602019c645875459f5e6dfc6b9d9437" "f951343d4bbe5a90dba0f058de8317ca58a6822faa65d8463b0e751a07ec887c" "f2b83b9388b1a57f6286153130ee704243870d40ae9ec931d0a1798a5a916e76" "955426466aa729d7d32483d3b2408cf474a1332550ad364848d1dfe9eecc8a16" "256bd513a9875cd855077162cdfee8d75b0ad7e18fe8b8cbc10412561fbef892" "174502267725776b47bdd2d220f035cae2c00c818765b138fea376b2cdc15eb6" "a28d89cf398c60dade1b0a7e3dce9d4691c236c05a050b7e6ba808bfce2622e1" "fd944f09d4d0c4d4a3c82bd7b3360f17e3ada8adf29f28199d09308ba01cc092" "4e10cdf7d030fb41061cf57c74f6ddfc19db8d4af6c8e0723dc77f9922543a3d" default)))
+ '(global-company-mode t)
+ '(org-agenda-files
+   (quote
+    ("~/.personal/org/brain/root.org" "/home/sole/.personal/org/appointments.org" "/home/sole/.personal/org/assholes.org" "/home/sole/.personal/org/contacts.org" "/home/sole/.personal/org/fiction-reading.org" "/home/sole/.personal/org/geek.org" "/home/sole/.personal/org/index.org" "/home/sole/.personal/org/journal.org" "/home/sole/.personal/org/koios.org" "/home/sole/.personal/org/master-book-list.org" "/home/sole/.personal/org/non-fiction.org" "/home/sole/.personal/org/projects.org" "/home/sole/.personal/org/stufftobuy.org" "/home/sole/.personal/org/todo.org")))
+ '(org-contacts-files (quote ("~/.personal/org/contacts.org"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(org-document-title ((t (:inherit default :weight normal :foreground "#bbc2cf" :family "Sans Serif" :height 2.0 :underline nil))))
+ '(org-level-1 ((t (:inherit default :weight normal :foreground "#bbc2cf" :family "Sans Serif" :height 1.7))))
+ '(org-level-2 ((t (:inherit default :weight normal :foreground "#bbc2cf" :family "Sans Serif" :height 1.5))))
+ '(org-level-3 ((t (:inherit default :weight normal :foreground "#bbc2cf" :family "Sans Serif" :height 1.25))))
+ '(org-level-4 ((t (:inherit default :weight normal :foreground "#bbc2cf" :family "Sans Serif" :height 1.1))))
+ '(org-level-5 ((t (:inherit default :weight normal :foreground "#bbc2cf" :family "Sans Serif"))))
+ '(org-level-6 ((t (:inherit default :weight normal :foreground "#bbc2cf" :family "Sans Serif"))))
+ '(org-level-7 ((t (:inherit default :weight normal :foreground "#bbc2cf" :family "Sans Serif"))))
+ '(org-level-8 ((t (:inherit default :weight normal :foreground "#bbc2cf" :family "Sans Serif")))))
