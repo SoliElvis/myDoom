@@ -1,9 +1,12 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; ~/.doom.d/packages.el
 
+(package! doom-modeline)
+(package! ranger)
+
 (package! fountain-mode)
 ;; (package! write-or-die-mode :recipe
-  ;; (:fetcher github :repo "duncanmortimer/write-or-die-mode.el"))
+  ;; (:host github :repo "duncanmortimer/write-or-die-mode.el"))
 (package! evil-collection)
 (package! julia-repl)
 
@@ -37,16 +40,16 @@
 (package! org-download)
 
 (package! org-protocol-capture-html :recipe
-  (:fetcher github :repo "alphapapa/org-protocol-capture-html"))
-(package! org-books :recipe (:fetcher github :repo "lepisma/org-books"))
-(package! org-board :recipe (:fetcher github :repo "scallywag/org-board"))
-(package! org-wiki :recipe (:fetcher github :repo "caiorss/org-wiki"))
-(package! org-ref :recipe (:fetcher github :repo "jkitchin/org-ref"))
-(package! zotxt-emacs :recipe (:fetcher github :repo "egh/zotxt-emacs"))
-(package! ob-rust :recipe (:fetcher gitlab :repo "ajyoon/ob-rust"))
-(package! org-writers-room :recipe (:fetcher github :repo "titaniumbones/org-writers-room"))
+  (:host github :repo "alphapapa/org-protocol-capture-html"))
+(package! org-books :recipe (:host github :repo "lepisma/org-books"))
+(package! org-board :recipe (:host github :repo "scallywag/org-board"))
+(package! org-wiki :recipe (:host github :repo "caiorss/org-wiki"))
+(package! org-ref :recipe (:host github :repo "jkitchin/org-ref"))
+(package! zotxt-emacs :recipe (:host github :repo "egh/zotxt-emacs"))
+(package! ob-rust :recipe (:host gitlab :repo "ajyoon/ob-rust"))
+(package! org-writers-room :recipe (:host github :repo "titaniumbones/org-writers-room"))
 
-(package! engine-mode :recipe (:fetcher github :repo "hrs/engine-mode"))
+(package! engine-mode :recipe (:host github :repo "hrs/engine-mode"))
 (package! yasnippet)
 (package! yasnippet-snippets)
 
@@ -58,3 +61,4 @@
 
 (package! elpy)
 (package! helm-org-rifle)
+(package! helm-c-yasnippet)
